@@ -4,25 +4,18 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.WebDriverListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import io.qameta.allure.Attachment;
 
 public class Listener implements WebDriverListener {
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(Listener.class);
-    @Attachment(value = "{name}", type = "image/png")
-    public byte[] attachScreenshotToAllure(String name, WebDriver driver) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
+    private static final Logger logger = LoggerFactory.getLogger(Listener.class);
 
+    // Логи START/END для всех вызовов WebDriver
     @Override
     public void beforeAnyCall(Object target, Method method, Object[] args) {
         logger.info("START: {}", method.getName());
@@ -33,15 +26,14 @@ public class Listener implements WebDriverListener {
         logger.info("END: {}", method.getName());
     }
 
+    // Скриншоты и лог ошибок
     @Override
     public void onError(Object target, Method method, Object[] args, InvocationTargetException e) {
-
         logger.error("ERROR in method: {}", method.getName());
         logger.error("Exception: ", e.getTargetException());
 
         if (target instanceof WebDriver) {
             takeScreenshot((WebDriver) target, method.getName());
-            attachScreenshotToAllure(method.getName(), (WebDriver) target);
         }
     }
 
@@ -68,12 +60,6 @@ public class Listener implements WebDriverListener {
         }
     }
 }
-
-
-
-
-
-
 
 
 

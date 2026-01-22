@@ -15,7 +15,8 @@ public class TravelTest extends TestBase {
         TravelPage travelPage = new TravelPage(driver);
         travelPage.clickOnFirstBuyButton().clickOnDestinationButton()
                 .clickOnSubmitButton().selectDate(departureDate)
-                .selectDate(returnDate).clickOnToThePassengersButton();
+                .selectDate(returnDate).checkTotalDays(departureDate,returnDate)
+                .clickOnToThePassengersButton();
         Assert.assertTrue(travelPage.isPassengersPageOpen());
     }
 }

@@ -22,8 +22,10 @@ jobs:
           distribution: corretto
           java-version: '17'
 
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@v2
+      - name: Setup ChromeDriver
+        uses: browser-actions/setup-chromedriver@v1
+         - with:
+         - chromedriver-version: 'latest'
 
       - name: Install Chromedriver
         uses: nanasess/setup-chromedriver@v1

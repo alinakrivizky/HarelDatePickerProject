@@ -1,0 +1,1 @@
+{"uuid":"52a1bd2c-8cb8-404d-a6e1-775afb14952a","name":"com.harel.tests.TestBase.setup","children":["85cb071d-1cd1-4b10-9534-2be5a6936a57"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1769119128478,"stop":1769119133601}],"afters":[],"start":1769119128478,"stop":1769119133601}

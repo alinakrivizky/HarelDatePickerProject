@@ -20,7 +20,8 @@ jobs:
           distribution: corretto
           java-version: '17'
 
-      - uses: browser-actions/setup-chromedriver@v1
+      - name: Setup ChromeDriver
+        uses: nanasess/setup-chromedriver@v1
         with:
           chromedriver-version: latest
 

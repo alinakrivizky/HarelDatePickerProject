@@ -1,8 +1,10 @@
 package com.harel.tests;
+import com.harel.utils.Listener;
 import  org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,11 +17,12 @@ public class TestBase {
   @BeforeMethod
     public void setup() {
     driver = new ChromeDriver();
+    WebDriver decorated = new EventFiringDecorator(new Listener()).decorate(driver);
     driver.get("https://digital.harel-group.co.il/travel-policy/wizard/destination");
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @AfterMethod
+    @AfterMethod(enabled=false)
     public void teardown() {
     driver.quit();
     }

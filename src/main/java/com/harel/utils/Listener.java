@@ -67,4 +67,13 @@ public class Listener implements WebDriverListener {
     public void afterQuit(WebDriver driver) {
         WebDriverListener.super.afterQuit(driver);
     }
+    @Override
+    public void beforeAnyCall(Object target, Method method, Object[] args) {
+        logger.info("Starting method: " + method.getName());
+    }
+
+    @Override
+    public void afterAnyCall(Object target, Method method, Object[] args, Object result) {
+        logger.info("Finished method: " + method.getName());
+    }
 }

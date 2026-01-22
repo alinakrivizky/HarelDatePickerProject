@@ -44,5 +44,19 @@ public class TravelPage extends BasePage {
         datePicker.selectDate(localDate);
                 return this;
     }
+    @FindBy(id="nextButton")
+    public WebElement nextButton;
+
+    public TravelPage clickOnToThePassengersButton() {
+        click(nextButton);
+        return this;
+
+    }
+    @FindBy(css = "h2[data-hrl-bo='screen_title']")
+    public WebElement screenTitle;
+    public boolean isPassengersPageOpen() {
+        return screenTitle.isDisplayed()
+                &&screenTitle.getText().contains("נשמח להכיר");
+    }
 }
 

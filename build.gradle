@@ -12,8 +12,9 @@ repositories {
 dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.26.0'
     testImplementation 'org.testng:testng:7.11.0'
-    //implementation 'org.slf4j:slf4j-simple:2.0.9' // для логов
+    implementation 'org.slf4j:slf4j-api:2.0.9'
     implementation 'ch.qos.logback:logback-classic:1.5.18'
+    testImplementation 'io.qameta.allure:allure-testng:2.22.1'
 
 }
 

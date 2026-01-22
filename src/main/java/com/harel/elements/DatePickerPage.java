@@ -6,6 +6,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -16,7 +18,7 @@ public class DatePickerPage extends BasePage {
         super(driver);
     }
 
-   @FindBy(css = ".MuiPickersStaticWrapper-staticWrapperRoot")
+    @FindBy(css = ".MuiPickersStaticWrapper-staticWrapperRoot")
     private WebElement dateInputWrapper;
     @FindBy(css = "p.MuiTypography-alignCenter")
     private WebElement monthYearHeader;
@@ -50,9 +52,8 @@ public class DatePickerPage extends BasePage {
             }
             ((JavascriptExecutor) driver)
                     .executeScript("arguments[0].click();", arrowForwardButton);
-
-            try { Thread.sleep(200); } catch (InterruptedException ignored) {}
-
+            wait.until(ExpectedConditions
+                    .textToBePresentInElement(monthYearHeader, targetMonthYear));
             attempts++;
         }
         throw new RuntimeException("target month had not found " + targetMonthYear);

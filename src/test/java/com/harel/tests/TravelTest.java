@@ -1,6 +1,7 @@
 package com.harel.tests;
 
 import com.harel.pages.TravelPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.LocalDate;
@@ -8,14 +9,13 @@ import java.time.LocalDate;
 public class TravelTest extends TestBase {
     @Test
     public void travelPositiveTest(){
-        LocalDate departureDate = LocalDate.now().plusDays(3);
+        LocalDate departureDate = LocalDate.now().plusDays(7);
         LocalDate returnDate = departureDate.plusDays(30);
 
         TravelPage travelPage = new TravelPage(driver);
-
-        new TravelPage(driver).clickOnFirstBuyButton()
-                .clickOnDestinationButton().clickOnSubmitButton()
-                .selectDate(departureDate);
-        travelPage.selectDate(returnDate);
+        travelPage.clickOnFirstBuyButton().clickOnDestinationButton()
+                .clickOnSubmitButton().selectDate(departureDate)
+                .selectDate(returnDate).clickOnToThePassengersButton();
+        Assert.assertTrue(travelPage.isPassengersPageOpen());
     }
 }

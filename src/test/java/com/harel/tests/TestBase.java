@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class TestBase {
-  WebDriver driver;
+  public WebDriver driver;
   @BeforeMethod
     public void setup() {
     driver = new ChromeDriver();
@@ -19,9 +19,7 @@ public class TestBase {
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @Test
-
-    @AfterMethod(enabled = false)
+    @AfterMethod
     public void teardown() {
     driver.quit();
     }

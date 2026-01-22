@@ -35,7 +35,7 @@ jobs:
         run: ./gradlew clean test
 
       - name: Upload test artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: selenium-logs-and-screenshots
           path: |
@@ -43,7 +43,7 @@ jobs:
             screenshots/
              name: Upload logs
       - name: Upload logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: logs
           path: build/logs/

@@ -1,5 +1,6 @@
 package com.harel.tests;
 import com.harel.utils.Listener;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import  org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,8 @@ public class TestBase {
   public WebDriver driver;
   @BeforeMethod
     public void setup() {
+      WebDriverManager.chromedriver().setup();
+
       ChromeOptions options = new ChromeOptions();
       options.addArguments("--headless");
       options.addArguments("--no-sandbox");

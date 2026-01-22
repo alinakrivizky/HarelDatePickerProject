@@ -12,11 +12,16 @@ import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import io.qameta.allure.Attachment;
 
 public class Listener implements WebDriverListener {
 
     private static final Logger logger =
             LoggerFactory.getLogger(Listener.class);
+    @Attachment(value = "{name}", type = "image/png")
+    public byte[] attachScreenshotToAllure(String name, WebDriver driver) {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
 
     @Override
     public void beforeAnyCall(Object target, Method method, Object[] args) {
@@ -36,6 +41,7 @@ public class Listener implements WebDriverListener {
 
         if (target instanceof WebDriver) {
             takeScreenshot((WebDriver) target, method.getName());
+            attachScreenshotToAllure(method.getName(), (WebDriver) target);
         }
     }
 

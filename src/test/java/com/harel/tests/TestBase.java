@@ -17,7 +17,8 @@ public class TestBase {
   @BeforeMethod
     public void setup() {
     driver = new ChromeDriver();
-    WebDriver decorated = new EventFiringDecorator(new Listener()).decorate(driver);
+      driver = new EventFiringDecorator<>(new Listener())
+              .decorate(driver);
     driver.get("https://digital.harel-group.co.il/travel-policy/wizard/destination");
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

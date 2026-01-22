@@ -1,0 +1,158 @@
+20:44:23.232 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.008 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.009 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.014 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.015 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.018 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.018 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.364 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.364 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.367 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.368 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.371 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.371 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.375 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.418 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.418 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: button[data-hrl-bo='purchase-for-new-customer']
+20:44:26.418 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:26.428 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: button[data-hrl-bo='purchase-for-new-customer']
+20:44:26.428 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:26.428 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.428 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.498 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.499 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.499 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: svg[alt='asia']
+20:44:26.499 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:26.915 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: svg[alt='asia']
+20:44:26.915 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:26.915 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.915 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.951 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.951 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:26.951 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: button[role='button']
+20:44:26.951 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:26.960 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: button[role='button']
+20:44:26.960 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:26.960 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:26.960 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.801 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.802 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.803 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.803 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.803 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.816 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.817 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.817 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.824 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.825 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.825 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.825 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.825 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.834 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.835 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.835 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.841 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.845 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.845 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: p.MuiTypography-alignCenter
+20:44:27.845 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.853 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: p.MuiTypography-alignCenter
+20:44:27.853 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.853 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.853 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.861 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.861 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.861 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: button[data-hrl-bo='2026-01-29']
+20:44:27.861 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.870 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: button[data-hrl-bo='2026-01-29']
+20:44:27.870 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.870 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.870 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.893 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.893 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.893 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.893 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.893 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.903 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.903 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.903 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.908 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.908 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.908 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.908 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.909 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.916 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: .MuiPickersStaticWrapper-staticWrapperRoot
+20:44:27.916 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.916 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.920 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.921 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.921 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: p.MuiTypography-alignCenter
+20:44:27.921 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.932 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: p.MuiTypography-alignCenter
+20:44:27.932 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.932 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.932 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.938 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.938 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.938 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.939 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.xpath: (//button[@aria-label='לעבור לחודש הבא' and not(@disabled)])[1]
+20:44:27.939 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.948 [Test worker] INFO  com.harel.utils.Listener - The locator is By.xpath: (//button[@aria-label='לעבור לחודש הבא' and not(@disabled)])[1]
+20:44:27.948 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.948 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.966 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.967 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.967 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: p.MuiTypography-alignCenter
+20:44:27.967 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.977 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: p.MuiTypography-alignCenter
+20:44:27.977 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:27.977 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:27.977 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:27.983 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.487 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.488 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: p.MuiTypography-alignCenter
+20:44:28.489 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.509 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: p.MuiTypography-alignCenter
+20:44:28.510 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.510 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.510 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.518 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.518 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.518 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: p.MuiTypography-alignCenter
+20:44:28.518 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.526 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: p.MuiTypography-alignCenter
+20:44:28.527 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.527 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.527 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.532 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.532 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.532 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: button[data-hrl-bo='2026-02-28']
+20:44:28.532 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.540 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: button[data-hrl-bo='2026-02-28']
+20:44:28.541 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.541 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.541 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.565 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.566 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.566 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.id: nextButton
+20:44:28.566 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.573 [Test worker] INFO  com.harel.utils.Listener - The locator is By.id: nextButton
+20:44:28.573 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.573 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.573 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.642 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.642 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.643 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: h2[data-hrl-bo='screen_title']
+20:44:28.643 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.653 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: h2[data-hrl-bo='screen_title']
+20:44:28.654 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.654 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.654 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.660 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.660 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.660 [Test worker] INFO  com.harel.utils.Listener - The locator will findBy.cssSelector: h2[data-hrl-bo='screen_title']
+20:44:28.660 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.666 [Test worker] INFO  com.harel.utils.Listener - The locator is By.cssSelector: h2[data-hrl-bo='screen_title']
+20:44:28.666 [Test worker] INFO  com.harel.utils.Listener - ********************
+20:44:28.666 [Test worker] INFO  com.harel.utils.Listener - END: 
+20:44:28.666 [Test worker] INFO  com.harel.utils.Listener - START: 
+20:44:28.670 [Test worker] INFO  com.harel.utils.Listener - END: 

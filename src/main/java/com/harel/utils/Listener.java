@@ -1,79 +1,74 @@
 package com.harel.utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.WebDriverListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Listener implements WebDriverListener {
-    Logger logger=LoggerFactory.getLogger(Listener.class);
 
-    @Override
-    public void onError(Object target, Method method, Object[] args, InvocationTargetException e) {
-        WebDriverListener.super.onError(target, method, args, e);
-        logger.info("Test failed");
-        logger.info("********************");
+    private static final Logger logger =
+            LoggerFactory.getLogger(Listener.class);
 
-        logger.info("Method----->"+method.getName());
-        logger.info("********************");
-
-        logger.info("TargetException----->"+e.getTargetException());
-        logger.info("*********************");
-
-        logger.info("ObjectTarget----->"+target.toString());
-        logger.info("********************");
-    }
-
-    @Override
-    public void beforeFindElement(WebDriver driver, By locator) {
-        logger.info("The locator will find" +locator);
-        logger.info("********************");
-        WebDriverListener.super.beforeFindElement(driver, locator);
-    }
-
-    @Override
-    public void afterFindElement(WebDriver driver, By locator, WebElement result) {
-        logger.info("The locator is " +locator);
-        logger.info("********************");
-        WebDriverListener.super.afterFindElement(driver, locator, result);
-    }
-
-    @Override
-    public void beforeFindElements(WebDriver driver, By locator) {
-        logger.info("before find elements" +locator);
-        logger.info("********************");
-        WebDriverListener.super.beforeFindElements(driver, locator);
-    }
-
-    @Override
-    public void afterFindElements(WebDriver driver, By locator, List<WebElement> result) {
-        logger.info("list size" +result.size());
-        logger.info("********************");
-        WebDriverListener.super.afterFindElements(driver, locator, result);
-    }
-
-    @Override
-    public void beforeQuit(WebDriver driver) {
-        WebDriverListener.super.beforeQuit(driver);
-    }
-
-    @Override
-    public void afterQuit(WebDriver driver) {
-        WebDriverListener.super.afterQuit(driver);
-    }
     @Override
     public void beforeAnyCall(Object target, Method method, Object[] args) {
-        logger.info("Starting method: " + method.getName());
+        logger.info("START: {}", method.getName());
     }
 
     @Override
     public void afterAnyCall(Object target, Method method, Object[] args, Object result) {
-        logger.info("Finished method: " + method.getName());
+        logger.info("END: {}", method.getName());
+    }
+
+    @Override
+    public void onError(Object target, Method method, Object[] args, InvocationTargetException e) {
+
+        logger.error("ERROR in method: {}", method.getName());
+        logger.error("Exception: ", e.getTargetException());
+
+        if (target instanceof WebDriver) {
+            takeScreenshot((WebDriver) target, method.getName());
+        }
+    }
+
+    private void takeScreenshot(WebDriver driver, String methodName) {
+        try {
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+            String time = LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
+
+            File dest = new File(
+                    System.getProperty("user.dir")
+                            + "/screenshots/"
+                            + methodName + "_" + time + ".png"
+            );
+
+            dest.getParentFile().mkdirs();
+            Files.copy(src.toPath(), dest.toPath());
+
+            logger.info("Screenshot saved: {}", dest.getAbsolutePath());
+
+        } catch (Exception ex) {
+            logger.error("Failed to take screenshot", ex);
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+

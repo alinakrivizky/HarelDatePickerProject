@@ -37,22 +37,18 @@ public class Listener implements WebDriverListener {
         }
     }
 
-    private void takeScreenshot(WebDriver driver, String methodName) {
+    public void takeScreenshot(WebDriver driver, String methodName) {
         try {
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
             String time = LocalDateTime.now()
                     .format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
 
-            File dest = new File(
-                    System.getProperty("user.dir")
-                            + "/screenshots/"
-                            + methodName + "_" + time + ".png"
-            );
+            File destDir = new File(System.getProperty("user.dir") + "/screenshots");
+            if (!destDir.exists()) destDir.mkdirs();
+            File dest = new File(destDir, methodName + "_" + time + ".png");
 
-            dest.getParentFile().mkdirs();
             Files.copy(src.toPath(), dest.toPath());
-
             logger.info("Screenshot saved: {}", dest.getAbsolutePath());
 
         } catch (Exception ex) {

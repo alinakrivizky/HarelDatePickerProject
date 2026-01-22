@@ -1,0 +1,44 @@
+name: Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17 (Corretto)
+        uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: '17'
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v2
+
+      - name: Install Chromedriver
+        uses: nanasess/setup-chromedriver@v1
+
+      - name: Grant execute permission for Gradlew
+        run: chmod +x gradlew
+
+      - name: Run Selenium Tests
+        run: ./gradlew clean test
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: selenium-logs-and-screenshots
+          path: |
+            build/reports/
+            screenshots/
+            

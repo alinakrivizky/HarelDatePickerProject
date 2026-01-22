@@ -50,10 +50,12 @@ public class DatePickerPage extends BasePage {
                                 " arguments[0].click();", dayButton);
                 return;
             }
+            String previousMonth = monthYearHeader.getText().trim();
             ((JavascriptExecutor) driver)
                     .executeScript("arguments[0].click();", arrowForwardButton);
-            wait.until(ExpectedConditions
-                    .textToBePresentInElement(monthYearHeader, targetMonthYear));
+            wait.until(ExpectedConditions.not(
+                    ExpectedConditions.textToBe(By.cssSelector("p.MuiTypography-alignCenter")
+                            , previousMonth)));
             attempts++;
         }
         throw new RuntimeException("target month had not found " + targetMonthYear);

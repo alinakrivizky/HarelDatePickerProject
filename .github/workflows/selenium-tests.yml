@@ -13,40 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Set up JDK 17 (Corretto)
-        uses: actions/setup-java@v3
+      - uses: actions/setup-java@v3
         with:
           distribution: corretto
           java-version: '17'
 
-      - name: Setup ChromeDriver
-        uses: browser-actions/setup-chromedriver@v1
-         - with:
-         - chromedriver-version: 'latest'
-
-      - name: Install Chromedriver
-        uses: nanasess/setup-chromedriver@v1
-
-      - name: Grant execute permission for Gradlew
-        run: chmod +x gradlew
-
-      - name: Run Selenium Tests
-        run: ./gradlew clean test
-
-      - name: Upload test artifacts
-        uses: actions/upload-artifact@v4
+      - uses: browser-actions/setup-chromedriver@v1
         with:
-          name: selenium-logs-and-screenshots
+          chromedriver-version: latest
+
+      - run: chmod +x gradlew
+
+      - run: ./gradlew clean test
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: selenium-artifacts
           path: |
             build/reports/
             screenshots/
-             name: Upload logs
-      - name: Upload logs
-        uses: actions/upload-artifact@v4
-        with:
-          name: logs
-          path: build/logs/
-
+            build/logs/

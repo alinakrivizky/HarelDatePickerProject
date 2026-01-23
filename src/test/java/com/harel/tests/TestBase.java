@@ -21,7 +21,7 @@ public class TestBase {
       WebDriverManager.chromedriver().setup();
 
       ChromeOptions options = new ChromeOptions();
-      options.addArguments("--headless");
+      //options.addArguments("--headless");
       options.addArguments("--no-sandbox");
       options.addArguments("--disable-dev-shm-usage");
       options.addArguments("--window-size=1920,1080");
@@ -30,7 +30,7 @@ public class TestBase {
       driver = new EventFiringDecorator<>(new Listener()).decorate(driver);
       driver.get("https://digital.harel-group.co.il/travel-policy/wizard/destination");
     driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
     @AfterMethod(enabled=false)
     public void teardown() {

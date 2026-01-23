@@ -55,6 +55,7 @@ public class Listener implements WebDriverListener {
             logger.error("Failed to take screenshot", ex);
         }
     }
+
 }
 
 

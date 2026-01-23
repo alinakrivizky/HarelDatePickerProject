@@ -1,12 +1,15 @@
 package com.harel.pages;
 
 import com.harel.elements.DatePickerPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -20,6 +23,7 @@ public class TravelPage extends BasePage {
 
     @FindBy(css = "button[data-hrl-bo='purchase-for-new-customer']")
     public WebElement purchaseForNewCustomer;
+
     public TravelPage clickOnFirstBuyButton() {
         wait.until(ExpectedConditions.elementToBeClickable(purchaseForNewCustomer));
         click(purchaseForNewCustomer);
@@ -28,48 +32,55 @@ public class TravelPage extends BasePage {
 
     @FindBy(css = "svg[alt='asia']")
     public WebElement asia;
+
     public TravelPage clickOnDestinationButton() {
         wait.until(ExpectedConditions.elementToBeClickable(asia));
         click(asia);
         return this;
     }
-    @FindBy(css="button[role='button']")
+
+    @FindBy(css = "button[role='button']")
     public WebElement submitButton;
+
     public TravelPage clickOnSubmitButton() {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton));
         click(submitButton);
         return this;
     }
+
     public TravelPage selectDate(LocalDate localDate) {
         datePicker.selectDate(localDate);
-                return this;
+        return this;
     }
+
     @FindBy(css = "span[data-hrl-bo='total-days']")
     public WebElement totalDays;
-    public TravelPage checkTotalDays (LocalDate departureDate, LocalDate arrivalDate) {
-        long expectedDays= ChronoUnit.DAYS.between(departureDate, arrivalDate)+1;
+
+    public TravelPage checkTotalDays(LocalDate departureDate, LocalDate arrivalDate) {
+        long expectedDays = ChronoUnit.DAYS.between(departureDate, arrivalDate) + 1;
         wait.until(ExpectedConditions.visibilityOf(totalDays));
         wait.until(ExpectedConditions.textToBePresentInElement(totalDays, ""));
         String totalDaysText = totalDays.getText();
         long actualDaysLong = Long.parseLong
-                (totalDaysText.replaceAll("\\D+",""));
+                (totalDaysText.replaceAll("\\D+", ""));
         Assert.assertEquals(expectedDays, actualDaysLong,
-        "Total days should be equal to actual days");
+                "Total days should be equal to actual days");
         return this;
     }
-    @FindBy(id="nextButton")
+
+    @FindBy(id = "nextButton")
     public WebElement nextButton;
+
     public TravelPage clickOnToThePassengersButton() {
         wait.until(ExpectedConditions.elementToBeClickable(nextButton));
         click(nextButton);
         return this;
 
     }
-    @FindBy(css = "h2[data-hrl-bo='screen_title']")
-    public WebElement screenTitle;
+
     public boolean isPassengersPageOpen() {
-        wait.until(ExpectedConditions.visibilityOf( screenTitle));
-        return screenTitle.getText().contains("נשמח להכיר");
+        WebElement title = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("h2[data-hrl-bo='screen_title']")));
+        return title.getText().contains("נשמח להכיר");
     }
 }
-

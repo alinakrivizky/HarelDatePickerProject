@@ -30,7 +30,7 @@ public class TestBase {
       driver = new EventFiringDecorator<>(new Listener()).decorate(driver);
       driver.get("https://digital.harel-group.co.il/travel-policy/wizard/destination");
     driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
     @AfterMethod(enabled=false)
     public void teardown() {

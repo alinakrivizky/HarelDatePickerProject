@@ -32,7 +32,7 @@ public class TestBase {
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
-    @AfterMethod(enabled=false)
+    @AfterMethod()
     public void teardown() {
     driver.quit();
     }

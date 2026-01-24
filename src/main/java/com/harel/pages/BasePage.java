@@ -1,5 +1,6 @@
 package com.harel.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,7 +39,19 @@ public class BasePage {
     }
 
     public String getText(WebElement element) {
+
         return wait.until(ExpectedConditions.visibilityOf(element)).getText();
+    }
+
+    public void jsScrollAndClick(WebElement element) {
+        wait.until(driver ->
+                (Boolean) ((JavascriptExecutor) driver)
+                        .executeScript("return !arguments[0].disabled;", element));
+
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block:'center'});" +
+                        "arguments[0].click();",
+                element);
     }
 }
 

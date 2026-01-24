@@ -1,6 +1,5 @@
-package com.harel.elements;
+package com.harel.pages;
 
-import com.harel.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -26,8 +25,7 @@ public class DatePickerPage extends BasePage {
     private WebElement arrowForwardButton;
 
     public void openCalendar() {
-        ((JavascriptExecutor) driver)
-                .executeScript("arguments[0].click();", dateInputWrapper);
+        jsScrollAndClick(dateInputWrapper);
     }
 
     public void selectDate(LocalDate date) {
@@ -45,14 +43,11 @@ public class DatePickerPage extends BasePage {
             if (currentMonthYear.equals(targetMonthYear)) {
                 WebElement dayButton = driver.findElement
                         (By.cssSelector("button[data-hrl-bo='" + isoDate + "']"));
-                ((JavascriptExecutor) driver)
-                        .executeScript("arguments[0].scrollIntoView();" +
-                                " arguments[0].click();", dayButton);
+                jsScrollAndClick(dayButton);
                 return;
             }
             String previousMonth = monthYearHeader.getText().trim();
-            ((JavascriptExecutor) driver)
-                    .executeScript("arguments[0].click();", arrowForwardButton);
+            jsScrollAndClick(arrowForwardButton);
             wait.until(ExpectedConditions.not(
                     ExpectedConditions.textToBe(By.cssSelector("p.MuiTypography-alignCenter")
                             , previousMonth)));

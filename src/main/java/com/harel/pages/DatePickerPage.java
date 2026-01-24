@@ -33,7 +33,7 @@ public class DatePickerPage extends BasePage {
 
         String targetMonthYear = date.format(DateTimeFormatter
                 .ofPattern("MMMM yyyy", new Locale("he")));
-        String isoDate = date.toString(); // 2026-12-21
+        String isoDate = date.toString(); // YYYY-MM-DD
 
         int attempts = 0;
 
@@ -49,8 +49,8 @@ public class DatePickerPage extends BasePage {
             String previousMonth = monthYearHeader.getText().trim();
             jsScrollAndClick(arrowForwardButton);
             wait.until(ExpectedConditions.not(
-                    ExpectedConditions.textToBe(By.cssSelector("p.MuiTypography-alignCenter")
-                            , previousMonth)));
+                    ExpectedConditions.textToBe(By.cssSelector("p.MuiTypography-alignCenter"),
+                            previousMonth)));
             attempts++;
         }
         throw new RuntimeException("target month had not found " + targetMonthYear);

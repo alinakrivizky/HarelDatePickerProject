@@ -27,6 +27,19 @@ public class DatePickerPage extends BasePage {
     public void openCalendar() {
         jsScrollAndClick(dateInputWrapper);
     }
+    private String waitAndGetMonth() {
+        return wait.until(driver -> {
+            String text = monthYearHeader.getText().trim();
+            return text.isEmpty() ? null : text;
+        });
+    }
+    private void clickNextMonthSafe() {
+        jsScrollAndClick(arrowForwardButton); // JS клик
+        wait.until(driver -> {
+            String currentMonth = monthYearHeader.getText().trim();
+            return !currentMonth.isEmpty();
+        });
+    }
 
     public void selectDate(LocalDate date) {
         openCalendar();
@@ -39,18 +52,17 @@ public class DatePickerPage extends BasePage {
 
         while (attempts < 36) { // maximum 3 years
             String currentMonthYear = monthYearHeader.getText().trim();
+            System.out.println("DEBUG current month: " + currentMonthYear);
 
             if (currentMonthYear.equals(targetMonthYear)) {
-                WebElement dayButton = driver.findElement
-                        (By.cssSelector("button[data-hrl-bo='" + isoDate + "']"));
+                WebElement dayButton = wait.until(
+                        ExpectedConditions.elementToBeClickable(
+                                By.cssSelector("button[data-hrl-bo='" + isoDate + "']")));
                 jsScrollAndClick(dayButton);
                 return;
             }
-            String previousMonth = monthYearHeader.getText().trim();
-            jsScrollAndClick(arrowForwardButton);
-            wait.until(ExpectedConditions.not(
-                    ExpectedConditions.textToBe(By.cssSelector("p.MuiTypography-alignCenter"),
-                            previousMonth)));
+            String previousMonth = currentMonthYear;clickNextMonthSafe();
+            wait.until(driver -> !waitAndGetMonth().equals(previousMonth));
             attempts++;
         }
         throw new RuntimeException("target month had not found " + targetMonthYear);
